@@ -2,15 +2,21 @@
 
 int ft_scanf(int num)
 {
-    if (num < 0)
-    {
+    int input_call;
+
+    printf("Enter digit: ");
+    scanf("%d", &input_call);
+    if (input_call < 0)
         return 0;
+    if (input_call < num)
+    {
+        return 1 + ft_scanf(num);   
     }
-    return 1 + ft_scanf(scanf("%d", &num));
+    return ft_scanf(num);     
 }
 
 int main()
 {
-    int n = 3;
+    int n = 5;
     printf("%d", ft_scanf(n));
 }
